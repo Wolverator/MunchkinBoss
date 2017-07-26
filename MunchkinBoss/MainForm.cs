@@ -14,6 +14,7 @@ namespace MunchkinBoss
     {
         public MainForm()
         {
+            Text += " v0.1 - Начало!"; 
             InitializeComponent();
         }
     }

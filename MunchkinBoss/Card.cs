@@ -6,15 +6,38 @@ using System.Threading.Tasks;
 
 namespace MunchkinBoss
 {
-    class Card
+    abstract class Card
     {
-        private string _title { get; }
-        private string _text { get; }
+        private string _title;
+        private string _text;
 
         public Card(string ti, string te)
         {
             _title = ti;
             _text = te;
+        }
+    }
+
+    class Door : Card
+    {
+        public Door(string ti, string te) : base(ti, te)
+        {
+        }
+    }
+
+    class Treasure : Card
+    {
+        public Treasure(string ti, string te) : base(ti, te)
+        {
+        }
+    }
+
+    class Monster : Door
+    {
+        private int _level;
+        public Monster(string ti, string te, int lvl) : base(ti, te)
+        {
+            _level = lvl;
         }
     }
 }
