@@ -93,4 +93,6 @@ namespace MunchkinBoss
             _equipType = equipType;
         }
     }
+
+    //сделать импорт объектов карт из внешних файлов XML
 }
