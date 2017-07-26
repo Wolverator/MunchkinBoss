@@ -11,12 +11,15 @@ namespace MunchkinBoss
         /// <summary>
         /// Главная точка входа для приложения.
         /// </summary>
+
+        public static MainForm MF = null;
+
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(MF = new MainForm());
         }
     }
 }
