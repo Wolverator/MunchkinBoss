@@ -55,6 +55,7 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Game.cs" />
+    <Compile Include="MunchkinException.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -86,6 +87,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\MunchkinBoss.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic1820669_md.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Treasure.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Door.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
