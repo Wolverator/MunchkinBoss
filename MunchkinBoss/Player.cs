@@ -8,29 +8,42 @@ namespace MunchkinBoss
 {
     class Player
     {
-        private Door _race;//добавить до нескольких - полукровка
-        private Door _extraRace;
-        private Door _class;//добавить до нескольких - суперманчкин
-        private Door _extraClass;
-        private int _level;
+        private uint _id, _level, _mercenaryCounter;
+        private string _nickname;
+        private playerRace _race,  _extraRace;//добавить до нескольких - полукровка, суперманчкин
+        private playerClass _class, _extraClass;
         private int _power;
-        private List<Card> _activeCurses;
-        private List<Card> _backpack;//рука
+        private List<Card> _activeCurses, _backpack, _extraEquipment;//проклятья, рука, читы, наёмники, прочее дополнительное снаряжение
         private List<Treasure> _inventory;//карты в игре, на столе, неиспользуемые
-        private List<Card> _extraEquipment;//читы, наёмники, механизмы
-        private Treasure _head;
-        private Treasure _body;
+        private Treasure _head, _body, _legs;
         private Treasure[] _hands;
-        private Treasure _legs;
 
-        public Player()
+        public Player(uint id, string nickname)
         {
+            _id = id; _nickname = nickname;
             _level = 1; _power = 0;
             _backpack = new List<Card>();
             _inventory = new List<Treasure>();
             _hands = new Treasure[2];
-            _race = null;//заменить на карту расы человека
+            _race = new playerRace("Человек");
             _class = null; _head = null; _body = null; _legs = null;
+        }
+
+        public void DrawDoor(uint count)
+        {
+            while (count > 0)
+            {
+                _backpack.Add(Game._doorDeck.Pop());
+                count--;
+            }
+        }
+        public void DrawTreasure(uint count)
+        {
+            while (count > 0)
+            {
+                _backpack.Add(Game._treasureDeck.Pop());
+                count--;
+            }
         }
     }
 }

@@ -8,9 +8,9 @@ namespace MunchkinBoss
 {
     class Game
     {
-        private Player[] _players;
-        Stack<Door> _doorDeck;
-        Stack<Treasure> _treasureDeck;
+        private static Player[] _players;
+        protected internal static Stack<Door> _doorDeck;
+        protected internal static Stack<Treasure> _treasureDeck;
 
         Random _rand = new Random();
         

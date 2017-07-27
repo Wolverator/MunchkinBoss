@@ -22,7 +22,7 @@ namespace MunchkinBoss
         traps = 10,
         buff = 11,
         cheat = 12,
-        palka = 13//LALKA ZATRALEN  =)))00)0 // сделать редчайшую карту рандома
+        palka = 13 // сделать редчайшую карту рандома
     }
     public enum Races
     {
@@ -116,27 +116,33 @@ namespace MunchkinBoss
     public class playerRace : Door
     {
         private Races _playerRace;
+        private string _pathImageFront;
         [DataMember]
         public Races PlayerRace { get { return _playerRace; } set { _playerRace = value; } }//!!!проверки для set - на правильность устанавливаемых значений
+        [DataMember]
+        public string PathImageFront { get { return _pathImageFront; } set { _pathImageFront = value; } }//!!!проверки для set - на правильность устанавливаемых значений
 
         public playerRace() { }
-        public playerRace(string title, string text, Image imageFront, Races playerRace)
+        public playerRace(string title = "Человек", string text = "заглушка расы по умолчанию", string pathImageFront = "Image/human.jpg", Races playerRace = Races.human)
         {
             _playerRace = playerRace;
+            _pathImageFront = pathImageFront;
         }
     }
     [DataContract]
     public class playerClass : Door
     {
         private Classes _playerClass;
+        private string _pathImageFront;
         [DataMember]
         public Classes PlayerClass { get { return _playerClass; } set { _playerClass = value; } }//!!!проверки для set - на правильность устанавливаемых значений
 
         public playerClass() { }
-        public playerClass(string title, string text, Image imageFront, Classes playerClass)
+        public playerClass(string title, string text, string pathImageFront, Classes playerClass)
             : base(title, text)
         {
             _playerClass = playerClass;
+            _pathImageFront = pathImageFront;
         }
     }
     [DataContract]
