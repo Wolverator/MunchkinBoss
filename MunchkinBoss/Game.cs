@@ -9,9 +9,8 @@ namespace MunchkinBoss
     class Game
     {
         private Player[] _players;
-        private Card[] card = new Card[168]; //запилить функцию заполнения массива
-        Stack<Door> _door;
-        Stack<Treasure> treasure;
+        Stack<Door> _doorDeck;
+        Stack<Treasure> _treasureDeck;
 
         Random _rand = new Random();
         
