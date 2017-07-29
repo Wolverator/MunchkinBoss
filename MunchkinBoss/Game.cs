@@ -21,7 +21,11 @@ namespace MunchkinBoss
         {
             if ((playersNumber < 3) || (playersNumber > 6)) throw new MunchkinException("Количество игроков должно быть от 3 до 6!");
             _players = new Player[playersNumber];
+            for (int i = 1; i <= playersNumber; i++)
+            {
 
+                _players[i] = new Player(i, nickname, male);
+            }
             
         }
         

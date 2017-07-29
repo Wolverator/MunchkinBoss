@@ -51,7 +51,7 @@ namespace MunchkinBoss
             if (_backpack.Count > _backpackCapacity)
             {
                 //выбрать, кому отдать карту, либо сбросить
-
+                
             }
 
         }
