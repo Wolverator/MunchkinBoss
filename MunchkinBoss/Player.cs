@@ -8,6 +8,7 @@ namespace MunchkinBoss
 {
     class Player
     {
+        private bool _male;
         private uint _id, _level, _mercenaryCounter;
         private string _nickname;
         private playerRace _race,  _extraRace;//добавить до нескольких - полукровка, суперманчкин
@@ -18,9 +19,9 @@ namespace MunchkinBoss
         private Treasure _head, _body, _legs;
         private Treasure[] _hands;
 
-        public Player(uint id, string nickname)
+        public Player(uint id, string nickname, bool male)
         {
-            _id = id; _nickname = nickname;
+            _id = id; _nickname = nickname; _male = male;
             _level = 1; _power = 0;
             _backpack = new List<Card>();
             _inventory = new List<Treasure>();
@@ -45,5 +46,6 @@ namespace MunchkinBoss
                 count--;
             }
         }
+
     }
 }

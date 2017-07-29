@@ -21,8 +21,7 @@ namespace MunchkinBoss
         actions = 9,
         traps = 10,
         buff = 11,
-        cheat = 12,
-        palka = 13 // сделать редчайшую карту рандома
+        cheat = 12
     }
     public enum Races
     {
@@ -40,10 +39,10 @@ namespace MunchkinBoss
         cliric=3,
         wizard=4,
         bard=5,
-        ranger=6
+        pathfinder=6
     }
 
-    [DataContract]
+    [DataContract]//название и текст
     public abstract class Card
     {
         private string _title;
@@ -57,13 +56,13 @@ namespace MunchkinBoss
         public Card() { }
         public Card(string title, string text)
         {
-            if ((title == null) || (text == null)) throw new MunchkinException("Заполнены не все поля карты");
+            if ((title == null) || (text == null)|| (title == "") || (text == "")) throw new MunchkinException("Заполнены не все поля карты");
             _title = title;
             _text = text;
         }
     }
 
-    [DataContract]
+    [DataContract]//+рубашка
     public class Door : Card
     {
         private string _pathImageBack = "Images/Door.jpg";
@@ -76,7 +75,7 @@ namespace MunchkinBoss
         }
     }
     
-    [DataContract]
+    [DataContract]//+картинка,уровень монстра, награды за убийство ! доделать непотребство, классовые усилители
     public class Monster : Door
     {
         private uint _level, _levelsForMurder, _treasures;
@@ -160,18 +159,19 @@ namespace MunchkinBoss
         }
     }
 
-    [DataContract]
+    [DataContract]//+рубашка
     public class Treasure : Card
     {
+        private string _pathImageBack = "Images/Treasure.jpg";
 
         public Treasure() { }
-        public Treasure(string title, string text, Image imageFront)
+        public Treasure(string title, string text)
             : base(title, text)
         {
-           // _imageBack = Properties.Resources.Treasure;
+           
         }
     }
-    [DataContract]
+    [DataContract]//+одноразовое(перенести в следующий тип?), большая(перенести в следующий тип?), тип, цена
     public class Equipment : Treasure
     {
         public bool _single_use { get; set; }
@@ -181,7 +181,7 @@ namespace MunchkinBoss
 
         public Equipment() { }
         public Equipment(string title, string text, Image imageFront, bool single_use, bool big, EquipType equipType, uint price) 
-            : base(title, text, imageFront)
+            : base(title, text)
         {
             _single_use = single_use;
             _big = big;
@@ -190,5 +190,6 @@ namespace MunchkinBoss
         }
     }
 
-    //сделать импорт объектов карт из внешних файлов XML
+    //сделать импорт объектов карт из внешних файлов JSON //update - вряд ли json получится, наверное 1 dll = 1 набор карт
+    //1файл = 1 коробка набора, потом перемешать и в колоды
 }

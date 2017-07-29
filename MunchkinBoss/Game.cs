@@ -11,6 +11,8 @@ namespace MunchkinBoss
         private static Player[] _players;
         protected internal static Stack<Door> _doorDeck;
         protected internal static Stack<Treasure> _treasureDeck;
+        protected internal static List<Door> _dicardPileDoors;
+        protected internal static List<Treasure> _dicardPileTreasures;
 
         Random _rand = new Random();
         
