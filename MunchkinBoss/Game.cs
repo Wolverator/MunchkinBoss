@@ -35,10 +35,10 @@ namespace MunchkinBoss
                     {
                         //действия игрока
                         Preparations();
-                        OpenDoor();
-                        SeekForTheTroubles();
-                        CleaningHiddens();
-                        GenerousGiveaway();
+                        OpenDoor(p);
+                        SeekForTheTroubles(p);
+                        CleaningHiddens(p);
+                        GenerousGiveaway(p);
                     }
                 }
             }
@@ -50,24 +50,24 @@ namespace MunchkinBoss
 
         }
 
-        private void OpenDoor()
+        private void OpenDoor(Player player)
         {
             
         }
 
-        private void SeekForTheTroubles()
+        private void SeekForTheTroubles(Player player)
         {
 
         }
 
-        private void CleaningHiddens()
+        private void CleaningHiddens(Player player)
         {
 
         }
 
-        private void GenerousGiveaway()
+        private void GenerousGiveaway(Player player)
         {
-
+            player.DiscardBackpack();
         }
     }
 }
