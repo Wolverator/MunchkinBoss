@@ -55,19 +55,15 @@ namespace MunchkinBoss
             }
 
         }
-        public void DiscardCard(dynamic card)
+        public void DiscardCard(Treasure card)
         {
-            if (card.GetType() == Type.GetType("Treasure")) {
-                int N = _backpack.IndexOf(card);
-                Game._dicardPileTreasures.Add(_backpack.ElementAt(N));
-                _backpack.Remove(card);
-            }
-            if (card.GetType() == Type.GetType("Door"))
-            {
-                int N = _backpack.IndexOf(card);
-                Game._dicardPileDoors.Add(_backpack.ElementAt(N));
-                _backpack.Remove(card);
-            }
+            _backpack.Remove(card);
+            Game._dicardPileTreasures.Add(card);
+        }
+        public void DiscardCard(Door card)
+        {
+            _backpack.Remove(card);
+            Game._dicardPileDoors.Add(card);
         }
     }
 }
