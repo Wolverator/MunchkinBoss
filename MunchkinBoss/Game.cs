@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace MunchkinBoss
 {
-    class Game
+    public class Game
     {
-        private static Player[] _players;
+        protected internal static Player[] _players;
         protected internal static Stack<Door> _doorDeck;
         protected internal static Stack<Treasure> _treasureDeck;
         protected internal static List<Door> _dicardPileDoors;
@@ -21,12 +22,14 @@ namespace MunchkinBoss
         {
             if ((playersNumber < 3) || (playersNumber > 6)) throw new MunchkinException("Количество игроков должно быть от 3 до 6!");
             _players = new Player[playersNumber];
-            for (int i = 1; i <= playersNumber; i++)
+            for (uint i = 1; i <= playersNumber; i++)
             {
-
-                _players[i] = new Player(i, nickname, male);
+                new NewPlayerForm().ShowDialog();
+                _players[i-1] = new Player(i, Program._nickname, Program._male);
+                Program.MF.WriteNickname(i, Program._nickname, Program._male);
+                Program.MF.UpdatePlayersInfo();
             }
-            
+           // Run();
         }
         
         public void Run()

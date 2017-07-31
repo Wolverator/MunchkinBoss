@@ -65,7 +65,7 @@ namespace MunchkinBoss
     [DataContract]//+рубашка
     public class Door : Card
     {
-        private string _pathImageBack = "Images/Door.jpg";
+        //private string _pathImageBack = "Images/Door.jpg";
 
         public Door() { }
         public Door(string title, string text) 
@@ -162,7 +162,7 @@ namespace MunchkinBoss
     [DataContract]//+рубашка
     public class Treasure : Card
     {
-        private string _pathImageBack = "Images/Treasure.jpg";
+        //private string _pathImageBack = "Images/Treasure.jpg";
 
         public Treasure() { }
         public Treasure(string title, string text)

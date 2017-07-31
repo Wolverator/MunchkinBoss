@@ -11,7 +11,8 @@ namespace MunchkinBoss
         /// <summary>
         /// Главная точка входа для приложения.
         /// </summary>
-
+        public static bool _male;
+        public static string _nickname;
         public static MainForm MF = null;
 
         [STAThread]

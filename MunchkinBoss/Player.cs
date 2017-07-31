@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MunchkinBoss
 {
-    class Player
+    public class Player
     {
         private bool _male;
         private uint _id, _level, _mercenaryCounter, _backpackCapacity = 5;
@@ -18,6 +18,15 @@ namespace MunchkinBoss
         private List<Treasure> _inventory;//карты в игре, на столе, неиспользуемые
         private Treasure _head, _body, _legs;
         private Treasure[] _hands;
+
+        public uint Level
+        {
+            get { return _level; }
+        }
+        public int Power
+        {
+            get { return _power; }
+        }
 
         public Player(uint id, string nickname, bool male)
         {

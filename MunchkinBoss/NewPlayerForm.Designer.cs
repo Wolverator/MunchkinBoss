@@ -30,10 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewPlayerForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textBoxNickname = new System.Windows.Forms.TextBox();
-            this.radioButtonMale = new System.Windows.Forms.RadioButton();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.radioButtonFemale = new System.Windows.Forms.RadioButton();
+            this.radioButtonMale = new System.Windows.Forms.RadioButton();
             this.CreateNewPlayerButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -49,6 +49,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Имя нового игрока";
             // 
+            // textBoxNickname
+            // 
+            this.textBoxNickname.Location = new System.Drawing.Point(6, 25);
+            this.textBoxNickname.Name = "textBoxNickname";
+            this.textBoxNickname.Size = new System.Drawing.Size(352, 31);
+            this.textBoxNickname.TabIndex = 0;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.radioButtonFemale);
@@ -60,12 +67,15 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Пол нового игрока";
             // 
-            // textBoxNickname
+            // radioButtonFemale
             // 
-            this.textBoxNickname.Location = new System.Drawing.Point(6, 25);
-            this.textBoxNickname.Name = "textBoxNickname";
-            this.textBoxNickname.Size = new System.Drawing.Size(352, 31);
-            this.textBoxNickname.TabIndex = 0;
+            this.radioButtonFemale.AutoSize = true;
+            this.radioButtonFemale.Location = new System.Drawing.Point(196, 21);
+            this.radioButtonFemale.Name = "radioButtonFemale";
+            this.radioButtonFemale.Size = new System.Drawing.Size(102, 27);
+            this.radioButtonFemale.TabIndex = 1;
+            this.radioButtonFemale.Text = "Женский";
+            this.radioButtonFemale.UseVisualStyleBackColor = true;
             // 
             // radioButtonMale
             // 
@@ -79,24 +89,15 @@
             this.radioButtonMale.Text = "Мужской";
             this.radioButtonMale.UseVisualStyleBackColor = true;
             // 
-            // radioButtonFemale
-            // 
-            this.radioButtonFemale.AutoSize = true;
-            this.radioButtonFemale.Location = new System.Drawing.Point(196, 21);
-            this.radioButtonFemale.Name = "radioButtonFemale";
-            this.radioButtonFemale.Size = new System.Drawing.Size(102, 27);
-            this.radioButtonFemale.TabIndex = 1;
-            this.radioButtonFemale.Text = "Женский";
-            this.radioButtonFemale.UseVisualStyleBackColor = true;
-            // 
             // CreateNewPlayerButton
             // 
             this.CreateNewPlayerButton.Location = new System.Drawing.Point(77, 129);
             this.CreateNewPlayerButton.Name = "CreateNewPlayerButton";
             this.CreateNewPlayerButton.Size = new System.Drawing.Size(206, 30);
             this.CreateNewPlayerButton.TabIndex = 2;
-            this.CreateNewPlayerButton.Text = "Создать";
+            this.CreateNewPlayerButton.Text = "Готово";
             this.CreateNewPlayerButton.UseVisualStyleBackColor = true;
+            this.CreateNewPlayerButton.Click += new System.EventHandler(this.CreateNewPlayerButton_Click);
             // 
             // NewPlayerForm
             // 
@@ -109,9 +110,10 @@
             this.Font = new System.Drawing.Font("Segoe Script", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "NewPlayerForm";
-            this.Text = "Введите данные об игроке №";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Введите данные об игроке";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
