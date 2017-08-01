@@ -92,9 +92,9 @@ namespace MunchkinBoss
             if (Game._players[0] != null) UpdatePlayer1(Game._players[0].Level, Game._players[0].Power);
             if (Game._players[1] != null) UpdatePlayer2(Game._players[1].Level, Game._players[1].Power);
             if (Game._players[2] != null) UpdatePlayer3(Game._players[2].Level, Game._players[2].Power);
-            if (Game._players[3] != null) UpdatePlayer4(Game._players[3].Level, Game._players[3].Power);
-            if (Game._players[4] != null) UpdatePlayer5(Game._players[4].Level, Game._players[4].Power);
-            if (Game._players[5] != null) UpdatePlayer6(Game._players[5].Level, Game._players[5].Power);
+            if (Game._players.Length > 3)if (Game._players[3] != null) UpdatePlayer4(Game._players[3].Level, Game._players[3].Power);
+            if (Game._players.Length > 4) if (Game._players[4] != null) UpdatePlayer5(Game._players[4].Level, Game._players[4].Power);
+            if (Game._players.Length > 5) if (Game._players[5] != null) UpdatePlayer6(Game._players[5].Level, Game._players[5].Power);
         }
         private void UpdatePlayer1(uint lvl, int pwr)
         {
