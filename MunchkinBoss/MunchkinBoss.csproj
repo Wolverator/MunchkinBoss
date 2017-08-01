@@ -110,6 +110,12 @@
   <ItemGroup>
     <None Include="Resources\Door.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BasicCardsSet\CardSets.csproj">
+      <Project>{7f2c839a-33df-412d-b2a1-eedaf6761ac9}</Project>
+      <Name>CardSets</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

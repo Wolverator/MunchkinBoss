@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CardSets;
 
 namespace MunchkinBoss
 {
@@ -26,6 +27,10 @@ namespace MunchkinBoss
         public int Power
         {
             get { return _power; }
+        }
+        public string Nickname
+        {
+            get { return _nickname; }
         }
 
         public Player(uint id, string nickname, bool male)

@@ -79,6 +79,10 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.играtoolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.начатьНовуюИгруToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.игрокаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.игрокаToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.игроковToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.игроковToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.сохранитьИгруToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.загрузитьИгруToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.правилаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -86,10 +90,6 @@
             this.оШмоткахToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.обОбменеСДругимиМанчкинамиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оБитвахToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.игрокаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.игрокаToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.игроковToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.игроковToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBoxPlayer5.SuspendLayout();
             this.groupBoxPlayer2.SuspendLayout();
             this.groupBoxPlayer3.SuspendLayout();
@@ -101,7 +101,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(445, 12);
+            this.button1.Location = new System.Drawing.Point(430, 30);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(157, 49);
             this.button1.TabIndex = 0;
@@ -119,7 +119,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(445, 66);
+            this.button2.Location = new System.Drawing.Point(430, 84);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(157, 49);
             this.button2.TabIndex = 2;
@@ -613,6 +613,34 @@
             this.начатьНовуюИгруToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.начатьНовуюИгруToolStripMenuItem.Text = "Начать новую игру";
             // 
+            // игрокаToolStripMenuItem
+            // 
+            this.игрокаToolStripMenuItem.Name = "игрокаToolStripMenuItem";
+            this.игрокаToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.игрокаToolStripMenuItem.Text = "3 игрока";
+            this.игрокаToolStripMenuItem.Click += new System.EventHandler(this.игрокаToolStripMenuItem_Click);
+            // 
+            // игрокаToolStripMenuItem1
+            // 
+            this.игрокаToolStripMenuItem1.Name = "игрокаToolStripMenuItem1";
+            this.игрокаToolStripMenuItem1.Size = new System.Drawing.Size(128, 22);
+            this.игрокаToolStripMenuItem1.Text = "4 игрока";
+            this.игрокаToolStripMenuItem1.Click += new System.EventHandler(this.игрокаToolStripMenuItem1_Click);
+            // 
+            // игроковToolStripMenuItem
+            // 
+            this.игроковToolStripMenuItem.Name = "игроковToolStripMenuItem";
+            this.игроковToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.игроковToolStripMenuItem.Text = "5 игроков";
+            this.игроковToolStripMenuItem.Click += new System.EventHandler(this.игроковToolStripMenuItem_Click);
+            // 
+            // игроковToolStripMenuItem1
+            // 
+            this.игроковToolStripMenuItem1.Name = "игроковToolStripMenuItem1";
+            this.игроковToolStripMenuItem1.Size = new System.Drawing.Size(128, 22);
+            this.игроковToolStripMenuItem1.Text = "6 игроков";
+            this.игроковToolStripMenuItem1.Click += new System.EventHandler(this.игроковToolStripMenuItem1_Click);
+            // 
             // сохранитьИгруToolStripMenuItem
             // 
             this.сохранитьИгруToolStripMenuItem.Name = "сохранитьИгруToolStripMenuItem";
@@ -660,34 +688,6 @@
             this.оБитвахToolStripMenuItem.Size = new System.Drawing.Size(268, 22);
             this.оБитвахToolStripMenuItem.Text = "О битвах";
             // 
-            // игрокаToolStripMenuItem
-            // 
-            this.игрокаToolStripMenuItem.Name = "игрокаToolStripMenuItem";
-            this.игрокаToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.игрокаToolStripMenuItem.Text = "3 игрока";
-            this.игрокаToolStripMenuItem.Click += new System.EventHandler(this.игрокаToolStripMenuItem_Click);
-            // 
-            // игрокаToolStripMenuItem1
-            // 
-            this.игрокаToolStripMenuItem1.Name = "игрокаToolStripMenuItem1";
-            this.игрокаToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.игрокаToolStripMenuItem1.Text = "4 игрока";
-            this.игрокаToolStripMenuItem1.Click += new System.EventHandler(this.игрокаToolStripMenuItem1_Click);
-            // 
-            // игроковToolStripMenuItem
-            // 
-            this.игроковToolStripMenuItem.Name = "игроковToolStripMenuItem";
-            this.игроковToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.игроковToolStripMenuItem.Text = "5 игроков";
-            this.игроковToolStripMenuItem.Click += new System.EventHandler(this.игроковToolStripMenuItem_Click);
-            // 
-            // игроковToolStripMenuItem1
-            // 
-            this.игроковToolStripMenuItem1.Name = "игроковToolStripMenuItem1";
-            this.игроковToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.игроковToolStripMenuItem1.Text = "6 игроков";
-            this.игроковToolStripMenuItem1.Click += new System.EventHandler(this.игроковToolStripMenuItem1_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -734,7 +734,6 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.GroupBox PlayerTableGroupBox;
         private System.Windows.Forms.Label labelLog;
@@ -794,6 +793,7 @@
         private System.Windows.Forms.ToolStripMenuItem игрокаToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem игроковToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem игроковToolStripMenuItem1;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }
 

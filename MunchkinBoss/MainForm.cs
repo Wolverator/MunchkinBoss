@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Serialization;
+using CardSets;
 
 namespace MunchkinBoss
 {
@@ -42,6 +43,33 @@ namespace MunchkinBoss
             catch (Exception ex) { MessageBox.Show(ex.Message, "ERROR!!!", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
 
+        
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataContractJsonSerializer jsonFormatter = new DataContractJsonSerializer(typeof(Monster));
+                using (FileStream fs = new FileStream("cards.json", FileMode.Open))
+                {
+                    Monster a = (Monster)jsonFormatter.ReadObject(fs);
+                    richTextBox1.Text += a.Title + "\n";
+                    richTextBox1.Text += a.Text + "\n";
+                    richTextBox1.Text += a.Level + "\n";
+                    richTextBox1.Text += a.PathImageFront + "\n";
+                    richTextBox1.Text += a.LevelsForMurder + "\n";
+                    richTextBox1.Text += a.Treasures + "\n";
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message, "ERROR!!!", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+        }
+
+
+        internal void WriteLog(string v)
+        {
+            richTextBox1.Text += v + "\n";
+            richTextBox1.ScrollToCaret();
+        }
         internal void WriteNickname(uint i, string nickname, bool male)
         {
             string S = ", м";
@@ -59,25 +87,6 @@ namespace MunchkinBoss
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                DataContractJsonSerializer jsonFormatter = new DataContractJsonSerializer(typeof(Monster));
-                using (FileStream fs = new FileStream("cards.json", FileMode.Open))
-                {
-                   Monster a = (Monster)jsonFormatter.ReadObject(fs);
-                    richTextBox1.Text += a.Title + "\n";
-                    richTextBox1.Text += a.Text + "\n";
-                    richTextBox1.Text += a.Level + "\n";
-                    richTextBox1.Text += a.PathImageFront + "\n";
-                    richTextBox1.Text += a.LevelsForMurder + "\n";
-                    richTextBox1.Text += a.Treasures + "\n";
-                }
-            }
-            catch (Exception ex) { MessageBox.Show(ex.Message, "ERROR!!!", MessageBoxButtons.OK, MessageBoxIcon.Error); }
-        }
-
         public void UpdatePlayersInfo()
         {
             if (Game._players[0] != null) UpdatePlayer1(Game._players[0].Level, Game._players[0].Power);
@@ -87,7 +96,6 @@ namespace MunchkinBoss
             if (Game._players[4] != null) UpdatePlayer5(Game._players[4].Level, Game._players[4].Power);
             if (Game._players[5] != null) UpdatePlayer6(Game._players[5].Level, Game._players[5].Power);
         }
-        
         private void UpdatePlayer1(uint lvl, int pwr)
         {
             labelLvl1.Text = lvl.ToString();
